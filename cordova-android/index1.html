@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: http://m.mallt.jidd.com.cn:8888/ https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">-->
+    <title>JPush Phonegap Simple Demo</title>
+    <link href="css/jquery.mobile-1.1.1.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript">
+        alert(APP.isDevice());
+        if(APP.isDevice()) {
+            var cordova = APP.addScript("cordova.js");
+            scriptOnLoad(cordova,function(){
+                APP.addScript("jpush-plugin.js");
+            });     
+        }
+        document.addEventListener("click",function(){
+            window.location.replace("test.html");
+        },false);
+    </script>
+</head>
+
+<body>
+    <div data-role="page" id="page">
+        <div data-role="content">
+            1212312
+            <button type="button" id="platform">platform</button>
+            <a href="http://192.168.3.11:8073/test.html">jjj</a>
+            <a href="test.html">jjj</a>
+        </div>
+    </div>
+</body>
+
+</html>
